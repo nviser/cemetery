@@ -1,3 +1,78 @@
 page-home {
+    .scroll-content {
+        background-image: url('../assets/imgs/bg.jpg');
+        background-size: cover;
+        background-position: center;
+        .tm-header {
+            padding-top: 100px;
+            background: rgba(0, 0, 0, .5);
+            margin-bottom: 30px;
+            /* reset */
+            .segment-button {
+                border: none;   
+                border-radius: 0;
+                color: #fff;
+            }
+            .segment-activated {
+                border: none;   
+                border-radius: 0;
+                background: none;
+                border-bottom: 2px solid #fff;
+            }
+        }
+        .item-input {
+            background: transparent;
+        }
+        .tm-wrap-input {
+            margin-top: 30px;
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+        .tm-item {
+            text-align: center;
+            padding: 20px 0;
+            color: #fff;
+            .tm-reg-btn {
+                background: $btn-reg;
+                width: 70%;
+                height: 50px;
+                font-size: 18px;
+                border-radius: 25px;
+                color: #fff;
+            }
+            a {
+                color: #fff;
+            }
+            .tm-social {
+                display: flex;
+                justify-content: space-around;
+                width: 70%;
+                margin: 0 auto;
+                .tm-soc {
+                    width: 50px;
 
+                }
+            }
+        }
+        .tm-soc-foot {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+    /* reset ionic styles */
+    .item-input {
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+        padding-left: 0 !important;
+        .item-inner {
+            border-bottom: 1px solid $input-underline-color !important; 
+            padding-right: 0 !important;
+            .text-input {
+                color: #fff;
+            }
+        }
+    }
 }
