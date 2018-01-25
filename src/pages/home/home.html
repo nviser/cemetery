@@ -7,18 +7,18 @@
 <ion-content>
   <div class="tm-header">
     <div>
-    <ion-segment [(ngModel)]="pet">
-      <ion-segment-button value="kittens">
-        Вход
-      </ion-segment-button>
-      <ion-segment-button value="puppies">
-        Регистрация
-      </ion-segment-button>
-    </ion-segment>
-</div>
+      <ion-segment [(ngModel)]="enterType">
+        <ion-segment-button value="registration">
+          Регистрация
+        </ion-segment-button>
+        <ion-segment-button value="login">
+          Вход
+        </ion-segment-button>
+      </ion-segment>
+    </div>
   </div>
-  <div [ngSwitch]="pet">
-    <div class="tm-wrap" *ngSwitchCase="'puppies'">
+  <div [ngSwitch]="enterType">
+    <div class="tm-wrap" *ngSwitchCase="'login'">
       <ion-list class="tm-wrap-input">
         <ion-item>
           <ion-input type="tel" placeholder="+7 900 900 90 90" clearInput></ion-input>
@@ -48,7 +48,7 @@
 
     </div>
 
-    <div class="tm-wrap" *ngSwitchCase="'kittens'">
+    <div class="tm-wrap" *ngSwitchCase="'registration'">
       <ion-list class="tm-wrap-input">
         <ion-item>
           <ion-input placeholder="Имя" clearInput></ion-input>

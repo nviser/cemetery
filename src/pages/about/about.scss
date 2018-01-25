@@ -1,3 +1,49 @@
 page-about {
+    ion-header {
+        padding-bottom: 100px;
+        background-image: url(../assets/imgs/logo-text.png);
+        background-color: rgba(0, 0, 0, .6);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80px;
+        margin-bottom: 30px;
+        .toolbar-background-ios {
+            background: transparent;
+            border: none !important;
+        }        
+        .tm-logo-name {
+            display: none;
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            font-size: 30px;
+            font-family: 'RosaMarena', sans-serif;
+        }
+        .tm-back-btn {
+            color: #ffffff;
+        }
+        .tm-settings {
+            width: 25px;
+        }
+    }
+    .content {
+        background-image: url('../assets/imgs/bg.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .scroll-content {
+        background: rgba(0,0,0,.5);
+    }
+}
 
+@font-face {
+	font-family: 'RosaMarena';
+	src: url('../assets/fonts/RosaMarena.eot');
+	src: url('../assets/fonts/RosaMarena.eot?#iefix') format('embedded-opentype'),
+		 url('../assets/fonts/RosaMarena.woff') format('woff'),
+		 url('../assets/fonts/RosaMarena.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
 }

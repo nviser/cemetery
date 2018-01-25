@@ -1,11 +1,18 @@
 page-home {
-    .scroll-content {
+    .content {
         background-image: url('../assets/imgs/bg.jpg');
         background-size: cover;
         background-position: center;
+    }
+    .scroll-content {
+        background: rgba(0,0,0,.5);
         .tm-header {
             padding-top: 100px;
-            background: rgba(0, 0, 0, .5);
+            background-image: url(../assets/imgs/logo_main.png);
+            background-color: rgba(0, 0, 0, .3);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 30px;
             margin-bottom: 30px;
             /* reset */
             .segment-button {
@@ -59,10 +66,10 @@ page-home {
             position: absolute;
             width: 100%;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
         }
     }
-    /* reset ionic styles */
+    /* overwrite ionic styles */
     .item-input {
         border-top: 0 !important;
         border-bottom: 0 !important;
@@ -75,16 +82,16 @@ page-home {
                 padding-left: 10px;
                 font-size: 14px;
                 &::-moz-placeholder {
-                color: white;
+                    color: white;
                 }
 
                 &:-ms-input-placeholder {
-                color: white;
+                    color: white;
                 }
 
                 &::-webkit-input-placeholder {
-                text-indent: 0;
-                color: white;
+                    text-indent: 0;
+                    color: white;
                 }
             }
         }

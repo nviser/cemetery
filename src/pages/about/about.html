@@ -1,8 +1,20 @@
 <ion-header>
+  <div class="tm-logo-name">Помню</div>
   <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+    <!-- <ion-title>
+    About
+    </ion-title> -->
+    <ion-buttons left>
+        <button class="tm-back-btn" ion-button icon-only (click)="viewCtrl.dismiss()">
+            <ion-icon name="arrow-back"></ion-icon>Выйти
+        </button>
+    </ion-buttons>
+    <ion-buttons right>
+        <button ion-button icon-only (click)="alert('clicked!!')">
+            <!-- <ion-icon name="cog"></ion-icon> -->
+            <img class="tm-settings" src="assets/imgs/settings_48_48.png" alt="settings">
+        </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
