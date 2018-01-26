@@ -32,9 +32,96 @@ page-about {
         background-image: url('../assets/imgs/bg.jpg');
         background-size: cover;
         background-position: center;
-    }
-    .scroll-content {
-        background: rgba(0,0,0,.5);
+        .scroll-content {
+            background: rgba(0,0,0,.5);
+            padding: 0 !important;
+            .tm-wrap-input {
+                width: 80%;
+                margin: 0 auto;
+                .item {
+                    background: transparent;
+                    padding-left: 25%;
+                    height: 80px;
+                    border-bottom: 1px solid rgba(255, 255, 255, .2);
+                    .item-inner {
+                        border-bottom: none;
+                    }
+                    ion-thumbnail {
+                        min-width: auto;
+                        min-height: auto;
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+                .item-block {
+                    &:first-child {
+                        border-top: none;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    .tm-text {
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .tm-holidays {
+                height: 80px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                background: $btn-reg;
+                font-size: 18px;
+            }
+            .tm-slider-wrapper {
+                position: relative;
+                .tm-arrow {
+                    position: absolute;
+                    z-index: 5;
+                    &.tm-right {
+                        top: calc(50% - 10px);
+                        right: 20px;
+                    }
+                    &.tm-left {
+                        top: calc(50% - 10px);
+                        left: 20px;
+                    }
+                    img {
+                        height: 20px;
+                    }
+                }
+                ion-slides {
+                    height: 150px;
+                    .item {
+                        background: transparent;
+                        width: 70%;
+                        margin: 0 auto;
+                        height: 150px;
+                        .item-inner {
+                            border-bottom: none;
+                        }
+                        ion-thumbnail {
+                            img {
+                                width: 100px;
+                                height: 100px;
+                                border-radius: 50%;
+                            }
+                        }
+                        .tm-text-h {
+                            color: #ffffff;
+                        }
+                        p {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

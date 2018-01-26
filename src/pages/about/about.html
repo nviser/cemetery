@@ -19,5 +19,67 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-list class="tm-wrap-input">
+            <ion-item>
+                    <ion-thumbnail item-start>
+                    <img src="assets/imgs/list_wh_75_75.png">
+                    </ion-thumbnail>
+                    <h2 class="tm-text">Люди</h2>
+                </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+            <img src="assets/imgs/calendar_wh_75_75.png">
+            </ion-thumbnail>
+            <h2 class="tm-text">Даты</h2>
+        </ion-item>
+       
+            <ion-item>
+                    <ion-thumbnail item-start>
+                    <img src="assets/imgs/holidays_wh_75_75.png">
+                    </ion-thumbnail>
+                    <h2 class="tm-text">Религиозные <br> праздники</h2>
+                </ion-item>
+      </ion-list>
 
+      <div class="tm-holidays">
+            Ближайшие праздники
+      </div>       
+      <div class="tm-slider-wrapper">
+          <div class="tm-arrow tm-left" (click)="slidePrev()">
+                  <img src="assets/imgs/navigate_left_24_42.png">
+          </div>
+          <div class="tm-arrow tm-right" (click)="slideNext()">
+                  <img src="assets/imgs/navigate_right_24_42.png">
+          </div>
+        <ion-slides>
+                <ion-slide>
+                <!--  <h1>Slide 1</h1> -->
+                <ion-item>
+                        <ion-thumbnail item-start>
+                        <img src="assets/imgs/bog.jpg">
+                        </ion-thumbnail>
+                        <h2 class="tm-text-h">Пасха</h2>
+                        <p>Христианство</p>
+                    </ion-item>
+                </ion-slide>
+                <ion-slide>
+                        <ion-item>
+                                <ion-thumbnail item-start>
+                                <img src="assets/imgs/bog.jpg">
+                                </ion-thumbnail>
+                                <h2 class="tm-text-h">Рождество</h2>
+                                <p>Христианство</p>
+                            </ion-item>
+                </ion-slide>
+                <ion-slide>
+                        <ion-item>
+                                <ion-thumbnail item-start>
+                                <img src="assets/imgs/bog.jpg">
+                                </ion-thumbnail>
+                                <h2 class="tm-text-h">Крещение</h2>
+                                <p>Христианство</p>
+                            </ion-item>
+                </ion-slide>
+            </ion-slides>
+        </div>    
 </ion-content>
