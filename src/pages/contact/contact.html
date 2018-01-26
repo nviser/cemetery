@@ -1,17 +1,92 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-title>
+        <div class="tm-title-wrap">
+          <img class="tm-settings" src="assets/imgs/settings_54_54.png" alt="settings">Настройки
+        </div>
+      </ion-title>
+      <ion-buttons left>
+          <button class="tm-back-btn" ion-button icon-only (click)="viewCtrl.dismiss()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header> 
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+        <ion-input type="text" placeholder="Имя"></ion-input>
+        <ion-label color="primary" stacked>Имя</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" placeholder="Фамилия"></ion-input>
+        <ion-label color="primary" stacked>Фамилия</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="tel" placeholder="Телефон"></ion-input>
+        <ion-label color="primary" stacked>Телефон</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="email" placeholder="Email"></ion-input>
+        <ion-label color="primary" stacked>Email</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="password" placeholder="Пароль"></ion-input>
+        <ion-label color="primary" stacked>Пароль</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
     </ion-item>
   </ion-list>
+  <div class="tm-nitification">
+    <div class="tm-header">Уведомления</div>
+    <div class="tm-check-wrap">
+      <div class="tm-inner left">
+              <ul>
+                <li>
+                  <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                В день события</li>
+                <li>
+                    <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                  За 1 день до даты
+                </li>
+                <li>
+                    <img class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
+                  За 2 дня до даты
+                </li>
+              </ul>
+      </div>
+      <div class="tm-inner right">
+          <ul>
+              <li>
+                <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                PUSH</li>
+              <li>
+                  <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                  SMS
+              </li>
+              <li>
+                  <img class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
+                  Email
+              </li>
+            </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tm-melody">
+    <input readonly (click)="chooseMelody()" [(ngModel)]="melody" class="tm-select">
+  </div>
 </ion-content>
