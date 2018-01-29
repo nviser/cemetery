@@ -5,6 +5,7 @@ import { Slides } from 'ionic-angular';
 import { MapPage } from '../map/map';
 import { SettingsPage } from '../settings/settings';
 import { HolidaysPage } from '../holidays/holidays';
+import { PersonPage } from '../person/person';
 
 @Component({
   selector: 'page-about',
@@ -46,6 +47,13 @@ export class AboutPage {
     this.navCtrl.push(HolidaysPage, {
       id: "holly",
       name: "Holy"
+    });
+  }
+
+  goToPerson(){
+    this.navCtrl.push(PersonPage, {
+      id: "person",
+      name: "Person"
     });
   }
 
