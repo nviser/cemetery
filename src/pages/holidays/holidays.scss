@@ -24,6 +24,80 @@ page-holidays {
             width: 25px;
         }
     }
+    .content {
+        background-image: url('../assets/imgs/bg.jpg');
+        background-size: cover;
+        background-position: center;
+        .scroll-content {
+            background: rgba(0, 0, 0, .5);
+            .tm-search {
+                text-align: center;
+                padding: 20px 30px;
+                background: $bg-light-grey;
+                input {
+                    height: 40px;
+                    padding: 0 70px 0 30px;
+                    width: 90%;
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid rgba(255, 255, 255, .3);
+                    background-image: url(../assets/imgs/search.png);
+                    background-repeat: no-repeat;
+                    background-position: 90% center;
+                    background-size: 20px;
+                    color: #ffffff;
+                    &::-moz-placeholder {
+                        color: white;
+                    }
+    
+                    &:-ms-input-placeholder {
+                        color: white;
+                    }
+    
+                    &::-webkit-input-placeholder {
+                        text-indent: 0;
+                        color: white;
+                    }
+                }
+            }
+            .list {
+                margin-bottom: 0;
+                background: $btn-reg;
+                .item {
+                    background: none;
+                    border-bottom: 1px solid $bg-light-grey;
+                    min-height: 12rem;
+                    padding-left: calc(5% + 30px);
+                    padding-right: calc(5% + 30px);
+                    margin: 0 auto;
+                    ion-label {
+                        white-space: unset;
+                        color: #ffffff;
+                        p {
+                            font-size: 12px;
+                            color: #ffffff;
+                        }
+                    }
+                    ion-thumbnail  {
+                        img {
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 50px;
+                        }
+                    }
+                    .item-inner {
+                        border-bottom: none;
+                    }
+                    &:first-child {
+                        border-top: none;
+                    }
+                    &:last-child {
+                        border-bottom: 1px solid $bg-light-grey;
+                    }
+                }
+            }
+        }
+    }
 /*     .content {
         background-image: url('../assets/imgs/bg.jpg');
         background-size: cover;
@@ -101,25 +175,25 @@ page-holidays {
                 }
             } 
             
-            .tm-melody {
-                background: $bg-dark-grey;
-                text-align: center;
-                padding: 30px;
-                .tm-select {
-                    background: transparent;
-                    border-radius: 50px;
-                    border: 1px solid #787e8a;
-                    height: 40px;
-                    width: 90%;
-                    color: #ffffff;
-                    text-align: left;
-                    padding-left: 30px;
-                    background-image: url(../assets/imgs/drop_down.png);
-                    background-repeat: no-repeat;
-                    background-position: 90% center;
-                    background-size: 15px;
-                }
-            }
         }
     } */
+                    .tm-melody {
+                        background: $bg-dark-grey;
+                        text-align: center;
+                        padding: 30px;
+                        .tm-select {
+                            background: transparent;
+                            border-radius: 50px;
+                            border: 1px solid #787e8a;
+                            height: 40px;
+                            width: 90%;
+                            color: #ffffff;
+                            text-align: left;
+                            padding-left: 30px;
+                            background-image: url(../assets/imgs/drop_down.png);
+                            background-repeat: no-repeat;
+                            background-position: 90% center;
+                            background-size: 15px;
+                        }
+                    }
 }

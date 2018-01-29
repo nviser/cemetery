@@ -9,7 +9,7 @@ import { SettingsPage } from '../settings/settings';
 })
 export class HolidaysPage {
 
-  melody: string = 'Выбрать мелодию';
+confession: string = 'Христианство';
 
   constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController) {
 
@@ -22,26 +22,26 @@ export class HolidaysPage {
     });
   }
 
-  chooseMelody() {
+  chooseConfession() {
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Выбрать мелодию',
+      title: 'Выбрать религию',
       buttons: [
         {
-          text: 'Melody1',
+          text: 'Христианство',
           handler: () => {
-            this.melody = 'Melody1';
+            this.confession = 'Христианство1';
           }
         },
         {
-          text: 'Melody2',
+          text: 'Христианство2',
           handler: () => {
-            this.melody = 'Melody2';
+            this.confession = 'Христианство2';
           }
         },
         {
-          text: 'Melody3',
+          text: 'Христианство3',
           handler: () => {
-            this.melody = 'Melody3';
+            this.confession = 'Христианство3';
           }
         },
         {
