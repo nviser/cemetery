@@ -10,8 +10,7 @@
         </button>
     </ion-buttons>
     <ion-buttons right>
-        <button ion-button icon-only (click)="alert('clicked!!')">
-            <!-- <ion-icon name="cog"></ion-icon> -->
+        <button ion-button icon-only (click)="goToSettings()">
             <img class="tm-settings" src="assets/imgs/settings_48_48.png" alt="settings">
         </button>
     </ion-buttons>
@@ -33,7 +32,7 @@
             <h2 class="tm-text">Даты</h2>
         </ion-item>
        
-            <ion-item>
+            <ion-item (click)="goToHolidays()">
                     <ion-thumbnail item-start>
                     <img src="assets/imgs/holidays_wh_75_75.png">
                     </ion-thumbnail>

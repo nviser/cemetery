@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { MapPage } from '../map/map';
+import { SettingsPage } from '../settings/settings';
+import { HolidaysPage } from '../holidays/holidays';
 
 @Component({
   selector: 'page-about',
@@ -30,6 +32,20 @@ export class AboutPage {
     this.navCtrl.push(MapPage, {
       id: "map",
       name: "Map"
+    });
+  }
+
+  goToSettings(){
+    this.navCtrl.push(SettingsPage, {
+      id: "set",
+      name: "Set"
+    });
+  }
+
+  goToHolidays(){
+    this.navCtrl.push(HolidaysPage, {
+      id: "holly",
+      name: "Holy"
     });
   }
 

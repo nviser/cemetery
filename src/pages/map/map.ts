@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SettingsPage } from '../settings/settings';
 
-/**
- * Generated class for the MapPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -23,6 +18,13 @@ export class MapPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
+  }
+
+  goToSettings(){
+    this.navCtrl.push(SettingsPage, {
+      id: "set",
+      name: "Set"
+    });
   }
 
 }
