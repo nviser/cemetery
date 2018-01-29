@@ -23,6 +23,14 @@ page-holidays {
         .tm-settings {
             width: 25px;
         }
+        .back-button {
+            .icon {
+                color: #ffffff;
+            }
+            .back-button-text {
+                display: none;
+            }
+        }
     }
     .content {
         background-image: url('../assets/imgs/bg.jpg');
