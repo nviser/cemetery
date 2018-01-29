@@ -52,7 +52,7 @@ page-contact {
                             }
                 }
             }
-            .tm-nitification {
+            .tm-notification {
                 background: $btn-reg;
                 padding: 10px;
                 .tm-header {
@@ -98,7 +98,7 @@ page-contact {
                 }
             } /*End notification */
             .tm-melody {
-                background: #3e4450;
+                background: $bg-dark-grey;
                 text-align: center;
                 padding: 30px;
                 .tm-select {

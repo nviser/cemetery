@@ -11,6 +11,9 @@ page-map {
         .back-button {
             color: #ffffff;
         }
+        .tm-settings {
+            width: 25px;
+        }
     }
     .content {
         background-image: url('../assets/imgs/bg.jpg');
@@ -18,6 +21,89 @@ page-map {
         background-position: center;
         .scroll-content {
             background: rgba(0, 0, 0, .5);
+            .tm-map-wrap {
+                background: $bg-dark-grey;
+                .tm-map {
+                    position: relative;
+                    background: #ffffff;
+                    .tm-control {
+                        position: absolute;
+                        top: calc(50% - 75px);
+                        left: 20px;
+                        height: 100px;
+                        width: 50px;
+                        background: rgba(38, 42, 51, .5);
+                        .plus {
+                            position: absolute;
+                            top: 10px;
+                            left: 7px;
+                        }
+                        .minus {
+                            position: absolute;
+                            bottom: 10px;
+                            left: 7px;
+                        }
+                        img {
+                            width: 35px;
+                        }
+                    }
+                }
+                .tm-change {
+                    padding: 20px;
+                    text-align: center;
+                    a {
+                        /* color: map-get($colors, primary); */
+                        color: #ffffff;   
+                        font-size: 18px;
+                    }
+                }
+            }
+            .list-ios {
+                margin-bottom: 0;
+                & > .item-block:first-child {
+                    border-top: none;
+                }
+            }
+            .item {
+                background: transparent;
+                border-bottom: 1px solid rgba(201, 201, 201, .2);
+                padding: 10px 10%;
+                .item-inner {
+                    padding-right: 0;
+                    border-bottom: none;
+                    .input-wrapper {
+                        flex-direction: column-reverse;
+                        .label-ios-primary {
+                            color:#939599;
+                            margin: 0;
+                        }
+                        .input {
+                            color: #ffffff;
+                        }
+                    }
+                            .tm-edit {
+                                width: 20px;
+                            }
+                }
+            }
+            .tm-photo-links {
+                padding: 10px 10%;
+                display: flex;
+                .tm-text-block {
+                    width: 50%;
+                    color: #939599;;
+                    font-size: 14px;
+                    &.right {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        a {
+                            color: #ffffff;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
         }
     }
 

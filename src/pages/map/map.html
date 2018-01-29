@@ -2,11 +2,83 @@
 
   <ion-navbar>
     <ion-title>Место захоронения</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="alert('clicked!!')">
+          <img class="tm-settings" src="assets/imgs/settings_48_48.png" alt="settings">
+      </button>
+  </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div class="tm-map-wrap">
+    <div class="tm-map">
+      <div class="tm-control">
+          <img class="plus" src="assets/imgs/add_81_81.png" alt="plus">
+          <img class="minus" src="assets/imgs/minus_81_81.png" alt="minus">
+      </div>
+      <img src="assets/imgs/map.jpg" alt="map">
+    </div>
+    <div class="tm-change"><a href="#">Изменить</a></div>
+  </div>
+  <ion-list>
+    <ion-item>
+        <ion-input type="text" placeholder="Страна захоронения"></ion-input>
+        <ion-label color="primary" stacked>Страна захоронения</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" placeholder="Область/регион"></ion-input>
+        <ion-label color="primary" stacked>Область/регион</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" placeholder="Город"></ion-input>
+        <ion-label color="primary" stacked>Город</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" placeholder="Улица"></ion-input>
+        <ion-label color="primary" stacked>Улица</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" placeholder="Строение/дом"></ion-input>
+        <ion-label color="primary" stacked>Строение/дом</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="teд" placeholder="Индекс"></ion-input>
+        <ion-label color="primary" stacked>Индекс</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" placeholder="Наименование кладбища"></ion-input>
+        <ion-label color="primary" stacked>Наименование кладбища</ion-label>
+        <ion-icon item-end>
+          <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
+        </ion-icon>
+    </ion-item>
+  </ion-list>
+  <div class="tm-photo-links">
+    <div class="tm-text-block"><p>Фото могилы</p></div>
+    <div class="tm-text-block right"><a href="#">Другое фото</a></div>
+  </div>
+  <div class="tm-photo">
+    <img src="assets/imgs/stone.jpg" alt="settings">
+  </div>
 </ion-content>
