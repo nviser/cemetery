@@ -1,0 +1,143 @@
+page-list {
+    ion-header {
+        background-color: rgba(38, 42, 51, .7);
+        .toolbar-background-ios {
+            background: transparent;
+            border: none !important;
+        }        
+        .tm-back-btn {
+            color: #ffffff;
+        }
+        .tm-holidays {
+            width: 20px;
+        }
+        .tm-title-wrap {
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                margin-right: 10px;
+            }
+        }
+        .tm-settings {
+            width: 25px;
+        }
+        .back-button {
+            .icon {
+                color: #ffffff;
+            }
+            .back-button-text {
+                display: none;
+            }
+        }
+    }
+    .content {
+        background-image: url('../assets/imgs/bg.jpg');
+        background-size: cover;
+        background-position: center;
+        .scroll-content {
+            background: rgba(38, 42, 51, .5);
+            .tm-search {
+                padding: 20px 30px;
+                background: $btn-reg;
+                position: relative;
+                .tm-add {
+                    position: absolute;
+                    right: calc(30px + 5%);
+                    top: 16px;
+                    img {
+                        width: 50px;
+                    }
+                }
+                input {
+                    margin-left: 5%;
+                    height: 40px;
+                    padding: 0 70px 0 30px;
+                    width: 70%;
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid rgba(255, 255, 255, .3);
+                    background-image: url(../assets/imgs/search.png);
+                    background-repeat: no-repeat;
+                    background-position: 90% center;
+                    background-size: 20px;
+                    color: #ffffff;
+                    &::-moz-placeholder {
+                        color: white;
+                    }
+    
+                    &:-ms-input-placeholder {
+                        color: white;
+                    }
+    
+                    &::-webkit-input-placeholder {
+                        text-indent: 0;
+                        color: white;
+                    }
+                }
+            }
+            .tm-kin {
+                background: $bg-dark-grey;
+                text-align: center;
+                padding: 30px;
+                .tm-select {
+                    background: transparent;
+                    border-radius: 50px;
+                    border: 1px solid #787e8a;
+                    height: 40px;
+                    width: 90%;
+                    color: #ffffff;
+                    text-align: left;
+                    padding-left: 30px;
+                    background-image: url(../assets/imgs/drop_down.png);
+                    background-repeat: no-repeat;
+                    background-position: 90% center;
+                    background-size: 15px;
+                }
+            }
+            .tm-content {
+                ion-item-divider {
+                    background: $bg-light-grey;
+                    color: #ffffff;
+                }
+                ion-item {
+                    background: $btn-reg;
+                    color: #ffffff;
+                    /* min-height: 10px; */
+                    /* padding-top: 20px; */
+                    position: relative;
+                    .item-inner {
+                        border-bottom: none;
+                        .label-ios {
+                            margin: 0;
+                        }
+                    }
+                    &:first-of-type {
+                        padding-top: 20px;
+                        .tm-del {
+                            top: 30px;
+                        }
+                    }
+                    &:last-child {
+                        padding-bottom: 20px;
+                        .tm-del {
+                            top: 9px;
+                        }
+                    }
+                    .tm-del {
+                        position: absolute;
+                        right: calc(30px + 5%);
+                        top: calc(50% - 13px);
+                        img {
+                            width: 26px;
+                        }
+                    }
+                }
+                .item-ios {
+                    padding-left: calc(30px + 5%);
+                }
+            }
+        }
+    }
+}

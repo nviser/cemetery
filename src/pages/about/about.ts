@@ -6,6 +6,7 @@ import { MapPage } from '../map/map';
 import { SettingsPage } from '../settings/settings';
 import { HolidaysPage } from '../holidays/holidays';
 import { PersonPage } from '../person/person';
+import { ListPage } from '../list/list';
 
 @Component({
   selector: 'page-about',
@@ -29,10 +30,10 @@ export class AboutPage {
     this.slides.slidePrev();
   }
 
-  goToMap(){
-    this.navCtrl.push(MapPage, {
-      id: "map",
-      name: "Map"
+  goToList(){
+    this.navCtrl.push(ListPage, {
+      id: "list",
+      name: "List"
     });
   }
 

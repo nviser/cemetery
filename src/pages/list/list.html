@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <div class="tm-title-wrap">
+        <img class="tm-holidays" src="assets/imgs/list_top_54_54.png" alt="settings">Список памяти
+      </div>
+    </ion-title>
+    <ion-buttons right>
+        <button ion-button icon-only (click)="goToSettings()">
+            <img class="tm-settings" src="assets/imgs/settings_48_48.png" alt="settings">
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="tm-search">
+      <input type="text" placeholder="Поиск..."/>
+      <div class="tm-add">
+        <img src="assets/imgs/plus_135_135.png" alt="plus">
+      </div>
+    </div>
+    <div class="tm-kin">
+      <input readonly (click)="chooseKin()" [(ngModel)]="kin" class="tm-select">
+    </div>
+    <div class="tm-content">
+      <ion-item-group>
+        <ion-item-divider color="light">A</ion-item-divider>
+        <ion-item>Абакумов Олег
+          <div class="tm-del">
+            <img src="assets/imgs/delete.png" alt="delete">
+          </div>
+        </ion-item>
+        <ion-item>Абрамова Елена
+            <div class="tm-del">
+              <img src="assets/imgs/delete.png" alt="delete">
+            </div>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light">Б</ion-item-divider>
+        <ion-item>Баранов Иван
+            <div class="tm-del">
+              <img src="assets/imgs/delete.png" alt="delete">
+            </div>
+        </ion-item>
+        <ion-item>Бегунов Илья
+            <div class="tm-del">
+              <img src="assets/imgs/delete.png" alt="delete">
+            </div>
+        </ion-item>
+        <ion-item>Бутусов Георгий
+            <div class="tm-del">
+              <img src="assets/imgs/delete.png" alt="delete">
+            </div>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+          <ion-item-divider color="light">В</ion-item-divider>
+          <ion-item>Волин Александр
+            <div class="tm-del">
+              <img src="assets/imgs/delete.png" alt="delete">
+            </div>
+          </ion-item>
+          <ion-item>Вудка Петр
+              <div class="tm-del">
+                <img src="assets/imgs/delete.png" alt="delete">
+              </div>
+          </ion-item>
+        </ion-item-group>
+    </div>
+</ion-content>

@@ -11,7 +11,8 @@ import { MapPage } from '../pages/map/map';
 import { SettingsPage } from '../pages/settings/settings';
 import { HolidaysPage } from '../pages/holidays/holidays';
 import { PersonPage } from '../pages/person/person';
-import { FeastPage } from '../pages/feast/feast';
+import { FeastPage } from '../pages/feast/feast';ListPage
+import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SettingsPage,
     HolidaysPage,
     PersonPage,
-    FeastPage
+    FeastPage,
+    ListPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SettingsPage,
     HolidaysPage,
     PersonPage,
-    FeastPage
+    FeastPage,
+    ListPage
   ],
   providers: [
     StatusBar,
