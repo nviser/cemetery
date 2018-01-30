@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { PersonPage } from '../person/person';
+import { SettingsPage } from '../settings/settings';
 
 @IonicPage()
 @Component({
@@ -16,6 +17,13 @@ export class ListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
+  }
+
+  goToSettings(){
+    this.navCtrl.push(SettingsPage, {
+      id: "set",
+      name: "Set"
+    });
   }
 
   goToPerson(){

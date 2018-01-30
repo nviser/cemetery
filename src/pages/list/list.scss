@@ -113,16 +113,16 @@ page-list {
                             margin: 0;
                         }
                     }
-                    &:first-of-type {
-                        padding-top: 20px;
-                        .tm-del {
-                            top: 30px;
-                        }
-                    }
                     &:last-child {
                         padding-bottom: 20px;
                         .tm-del {
                             top: 9px;
+                        }
+                    }
+                    &:first-of-type {
+                        padding-top: 20px;
+                        .tm-del {
+                            top: 30px;
                         }
                     }
                     .tm-del {
