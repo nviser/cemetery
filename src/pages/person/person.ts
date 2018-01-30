@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActionSheetController, Slides } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
+import { MapPage } from '../map/map';
 
 @IonicPage()
 @Component({
@@ -27,6 +28,13 @@ export class PersonPage {
     this.navCtrl.push(SettingsPage, {
       id: "set",
       name: "Set"
+    });
+  }
+
+  goToMap(){
+    this.navCtrl.push(MapPage, {
+      id: "map",
+      name: "Map"
     });
   }
 

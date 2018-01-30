@@ -7,6 +7,7 @@ import { SettingsPage } from '../settings/settings';
 import { HolidaysPage } from '../holidays/holidays';
 import { PersonPage } from '../person/person';
 import { ListPage } from '../list/list';
+import { CalendarPage } from '../calendar/calendar';
 
 @Component({
   selector: 'page-about',
@@ -51,10 +52,10 @@ export class AboutPage {
     });
   }
 
-  goToPerson(){
-    this.navCtrl.push(PersonPage, {
-      id: "person",
-      name: "Person"
+  goToCalendar(){
+    this.navCtrl.push(CalendarPage, {
+      id: "calendar",
+      name: "Calendar"
     });
   }
 

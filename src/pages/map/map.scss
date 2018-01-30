@@ -10,6 +10,9 @@ page-map {
         }
         .back-button {
             color: #ffffff;
+            .back-button-text {
+                display: none;
+            }
         }
         .tm-settings {
             width: 25px;

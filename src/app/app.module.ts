@@ -13,6 +13,7 @@ import { HolidaysPage } from '../pages/holidays/holidays';
 import { PersonPage } from '../pages/person/person';
 import { FeastPage } from '../pages/feast/feast';
 import { ListPage } from '../pages/list/list';
+import { CalendarPage } from '../pages/calendar/calendar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +30,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HolidaysPage,
     PersonPage,
     FeastPage,
-    ListPage
+    ListPage,
+    CalendarPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HolidaysPage,
     PersonPage,
     FeastPage,
-    ListPage
+    ListPage,
+    CalendarPage
   ],
   providers: [
     StatusBar,
