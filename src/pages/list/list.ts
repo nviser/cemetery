@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
-
-/**
- * Generated class for the ListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { PersonPage } from '../person/person';
 
 @IonicPage()
 @Component({
@@ -22,6 +16,13 @@ export class ListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
+  }
+
+  goToPerson(){
+    this.navCtrl.push(PersonPage, {
+      id: "list",
+      name: "List"
+    });
   }
 
   chooseKin() {

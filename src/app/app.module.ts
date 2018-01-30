@@ -11,7 +11,7 @@ import { MapPage } from '../pages/map/map';
 import { SettingsPage } from '../pages/settings/settings';
 import { HolidaysPage } from '../pages/holidays/holidays';
 import { PersonPage } from '../pages/person/person';
-import { FeastPage } from '../pages/feast/feast';ListPage
+import { FeastPage } from '../pages/feast/feast';
 import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
