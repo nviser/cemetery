@@ -18,6 +18,8 @@ import { CalendarPage } from '../pages/calendar/calendar';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { CalendarModule } from 'ionic3-calendar';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -35,6 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    CalendarModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
