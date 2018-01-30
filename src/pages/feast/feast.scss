@@ -20,7 +20,16 @@ page-feast {
         background-size: cover;
         background-position: center;
         .scroll-content {
-            background: rgba(38, 42, 51, .5);
+            background: rgba(86, 90, 107, .6);
+            .tm-text {
+                color: #ffffff;
+                padding: 20px 10%;
+                font-size: 18px;
+                .emph {
+                    color: #a6acb9;
+                    font-weight: 600;
+                }
+            }
         }
     }
 }
