@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
+import { FeastPage } from '../feast/feast';
 
 @Component({
   selector: 'page-holidays',
@@ -13,6 +14,13 @@ confession: string = 'Христианство';
 
   constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController) {
 
+  }
+
+  goToFeast(){
+    this.navCtrl.push(FeastPage, {
+      id: "feast",
+      name: "Feast"
+    });
   }
 
   goToSettings(){

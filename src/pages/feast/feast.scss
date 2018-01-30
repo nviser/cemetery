@@ -1,0 +1,26 @@
+page-feast {
+    ion-header {
+        background-color: rgba(38, 42, 51, .7);
+        .toolbar-background-ios {
+            background: transparent;
+            border: none !important;
+        }        
+        .toolbar-title {
+            color: #ffffff;
+        }
+        .back-button {
+            color: #ffffff;
+        }
+        .tm-settings {
+            width: 25px;
+        }
+    }
+    .content {
+        background-image: url('../assets/imgs/bg.jpg');
+        background-size: cover;
+        background-position: center;
+        .scroll-content {
+            background: rgba(38, 42, 51, .5);
+        }
+    }
+}
