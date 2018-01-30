@@ -1,3 +1,100 @@
 page-calendar {
-
+    ion-header {
+        background-color: rgba(38, 42, 51, .7);
+        .toolbar-background-ios {
+            background: transparent;
+            border: none !important;
+        }        
+        .tm-back-btn {
+            color: #ffffff;
+        }
+        .tm-holidays {
+            width: 20px;
+        }
+        .tm-title-wrap {
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                margin-right: 10px;
+            }
+        }
+        .tm-settings {
+            width: 25px;
+        }
+        .back-button {
+            .icon {
+                color: #ffffff;
+            }
+            .back-button-text {
+                display: none;
+            }
+        }
+    }
+    .content {
+        background-image: url('../assets/imgs/bg.jpg');
+        background-size: cover;
+        background-position: center;
+        .scroll-content {
+            background: rgba(38, 42, 51, .5);
+            .tm-choose {
+                display: flex;
+                padding: 0 10%;
+                justify-content: space-between;
+                background: $btn-reg;
+                .tm-block {
+                    width: 43%;
+                    height: 75px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #ffffff;
+                    font-size: 16px;
+                    .tm-arrow {
+                        position: absolute;
+                        top: calc(50% - 12px);
+                        img {
+                            width: 24px;
+                        }
+                        &.left {
+                            left: 0;
+                        }
+                        &.right {
+                            right: 0;
+                        }
+                    }
+                }
+            }
+            .tm-switcher {
+                display: flex;
+                height: 50px;
+                background: #3e4450;
+                justify-content: center;
+                align-items: center;
+                padding: 0 10%;
+                .tm-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 30px;
+                    color: rgba(255, 255, 255, .5);
+                    width: 33%;
+                    &:first-child {
+                        width: 20%;
+                    }
+                    &:nth-child(2) {
+                        width: 47%;
+                    }
+                    &.activated {
+                        color: #ffffff;
+                        border-radius: 50px;
+                        background: $btn-reg;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
 }

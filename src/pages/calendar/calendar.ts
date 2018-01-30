@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SettingsPage } from '../settings/settings';
 
 @IonicPage()
 @Component({
@@ -13,6 +14,13 @@ export class CalendarPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarPage');
+  }
+
+  goToSettings(){
+    this.navCtrl.push(SettingsPage, {
+      id: "set",
+      name: "Set"
+    });
   }
 
 }
