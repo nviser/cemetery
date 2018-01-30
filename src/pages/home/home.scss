@@ -7,7 +7,7 @@ page-home {
     .scroll-content {
         background-color: rgba(38, 42, 51, .5);
         .tm-header {
-            padding-top: 100px;
+            padding-top: 120px;
             background-image: url(../assets/imgs/logo_main.png);
             background-color: rgba(38, 42, 51, .7);
             background-repeat: no-repeat;
@@ -16,15 +16,22 @@ page-home {
             margin-bottom: 30px;
             /* reset */
             .segment-button {
+                font-size: 18px;
                 border: none;   
                 border-radius: 0;
-                color: #fff;
+                color: rgba(255, 255, 255, .5);
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             .segment-activated {
                 border: none;   
                 border-radius: 0;
                 background: none;
                 border-bottom: 2px solid #fff;
+                color: #ffffff;
+                font-weight: 600;
             }
         }
         .item-input {

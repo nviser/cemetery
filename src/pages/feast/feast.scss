@@ -1,6 +1,9 @@
 page-feast {
     ion-header {
         background-color: rgba(38, 42, 51, .7);
+        .back-button-text {
+            display: none;
+        }
         .toolbar-background-ios {
             background: transparent;
             border: none !important;
