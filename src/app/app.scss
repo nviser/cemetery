@@ -14,30 +14,37 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
-.tabs-ios {
+.toolbar-background {
+    background: transparent !important;
+  }
+  .toolbar-title {  
+    text-align: center !important;
+}
+.tabs {
     .tabbar {
-        background: $bg-deep-blue;
+        background: #262a33 !important;
         border-top: none;
         padding: 0 10%;
     }
     .tab-button {
-        min-height: 70px;
+        min-height: 70px !important;
+        height: 70px !important;
+        z-index: 20;
     }
     #tab-t0-0 {
-        background-image: url(../assets/imgs/list_top_54_54.png);
+        background: url('../assets/imgs/list_top_54_54.png');
         background-repeat: no-repeat;
         background-size: 25px;
         background-position: center;
     }
     #tab-t0-1 {
-        background-image: url(../assets/imgs/calendar_top_54_54.png);
+        background-image: url('../assets/imgs/calendar_top_54_54.png');
         background-repeat: no-repeat;
         background-size: 25px;
         background-position: center;
     }
     #tab-t0-2 {
-        background-image: url(../assets/imgs/holidays_top_54_54.png);
+        background-image: url('../assets/imgs/holidays_top_54_54.png');
         background-repeat: no-repeat;
         background-size: 25px;
         background-position: center;

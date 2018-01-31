@@ -17,8 +17,11 @@
       </ion-segment>
     </div>
   </div>
-  <div [ngSwitch]="enterType">
-    <div class="tm-wrap" *ngSwitchCase="'login'">
+  <div [ngSwitch]="enterType" class="tm-enter">
+    <div class="tm-wrap enter" *ngSwitchCase="'login'">
+      <div class="tm-pusher">
+
+      
       <ion-list class="tm-wrap-input">
         <ion-item>
           <ion-input type="tel" placeholder="+7 900 900 90 90" clearInput></ion-input>
@@ -33,6 +36,9 @@
         <div class="tm-item">
           <a href="#">Напомнить пароль</a>
         </div>
+
+        <div class="tm-empty"></div>
+      </div>
         <div class="tm-soc-foot">
           <div class="tm-item">
             Войти через соц. сети

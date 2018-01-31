@@ -1,7 +1,7 @@
 page-contact {
     ion-header {
         background-color: rgba(0, 0, 0, .6);
-        .toolbar-background-ios {
+        .toolbar-background {
             background: transparent;
             border: none !important;
         }        
@@ -27,7 +27,7 @@ page-contact {
         background-position: center;
         .scroll-content {
             background: rgba(0, 0, 0, .5);
-            .list-ios {
+            .list {
                 margin-bottom: 0;
             }
             .item {
@@ -39,7 +39,7 @@ page-contact {
                     border-bottom: none;
                     .input-wrapper {
                         flex-direction: column-reverse;
-                        .label-ios-primary {
+                        .label {
                             color:#939599;
                             margin: 0;
                         }

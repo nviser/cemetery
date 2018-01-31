@@ -1,12 +1,13 @@
 page-person {
     ion-header {
         background-color: rgba(38, 42, 51, .7);
-        .toolbar-background-ios {
+        .toolbar-background {
             background: transparent;
             border: none !important;
         }        
         .toolbar-title {
             color: #ffffff;
+            text-align: center !important;
         }
         .back-button {
             color: #ffffff;
@@ -80,8 +81,8 @@ page-person {
                     }
                 }
             }
-            .list-ios {
-                margin-bottom: 0;
+            .list {
+                margin-bottom: 0 !important;
             }
             .item {
                 background: $btn-reg;
@@ -99,8 +100,8 @@ page-person {
                     border-bottom: none;
                     .input-wrapper {
                         flex-direction: column-reverse;
-                        .label-ios-primary {
-                            color:#939599;
+                        .label {
+                            color:#939599 !important;
                             margin: 0;
                         }
                         .input {

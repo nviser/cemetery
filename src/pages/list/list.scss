@@ -1,7 +1,7 @@
 page-list {
     ion-header {
         background-color: rgba(38, 42, 51, .7);
-        .toolbar-background-ios {
+        .toolbar-background {
             background: transparent;
             border: none !important;
         }        
@@ -109,7 +109,7 @@ page-list {
                     position: relative;
                     .item-inner {
                         border-bottom: none;
-                        .label-ios {
+                        .label {
                             margin: 0;
                         }
                     }
@@ -134,8 +134,9 @@ page-list {
                         }
                     }
                 }
-                .item-ios {
+                .item {
                     padding-left: calc(30px + 5%);
+                    border-bottom: none;
                 }
             }
         }

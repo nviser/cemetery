@@ -1,6 +1,6 @@
 {
-  "name": "cutePuppyPics",
-  "app_id": "",
+  "name": "Cemetery",
+  "app_id": "b707a337",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

@@ -27,7 +27,7 @@ page-settings {
             background-position: center;
             .scroll-content {
                 background: rgba(38, 42, 51, .5);
-                .list-ios {
+                .list {
                     margin-bottom: 0;
                 }
                 .item {
@@ -39,8 +39,8 @@ page-settings {
                         border-bottom: none;
                         .input-wrapper {
                             flex-direction: column-reverse;
-                            .label-ios-primary {
-                                color:#939599;
+                            .label {
+                                color:#939599 !important;
                                 margin: 0;
                             }
                             .input {
