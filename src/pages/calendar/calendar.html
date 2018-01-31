@@ -20,10 +20,10 @@
   <div class="tm-choose">
     <div class="tm-block">
       Сентябрь
-      <div class="tm-arrow left">
+      <div class="tm-arrow left" (click)="goToLastMonth()">
         <img src="assets/imgs/left_60_60.png" alt="left">
       </div>
-      <div class="tm-arrow right">
+      <div class="tm-arrow right" (click)="goToNextMonth()">
         <img src="assets/imgs/right_60_60.png" alt="right">
       </div>  
     </div>
@@ -43,34 +43,58 @@
     <div class="tm-item activated">Все события</div>
   </div>
   <!-- <ion-calendar #calendar></ion-calendar> -->
-
-  <div class="calendar-header">
-      <ion-row class="calendar-month">
-        <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
-        <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
-        <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
-      </ion-row>
-    </div>
-    <div class="calendar-body">
-      <ion-grid>
-        <ion-row class="calendar-weekday">
-          <ion-col>Mo</ion-col>
-          <ion-col>Tu</ion-col>
-          <ion-col>We</ion-col>
-          <ion-col>Th</ion-col>
-          <ion-col>Fr</ion-col>
-          <ion-col>Sa</ion-col>
-          <ion-col>Su</ion-col>
+  <div class="tm-calendar">
+    <!-- <div class="calendar-header">
+        <ion-row class="calendar-month">
+          <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+          <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
+          <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
         </ion-row>
-        <ion-row class="calendar-date">
-          <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month">{{lastDay}}</ion-col>
-          <ion-col col-1 *ngFor="let day of daysInThisMonth">
-            <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
-            <ng-template #otherDate class="otherDate">{{day}}</ng-template>
-          </ion-col>
-          <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month">{{nextDay}}</ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
+      </div> -->
+      <div class="calendar-body">
+        <ion-grid>
+          <ion-row class="calendar-weekday">
+            <ion-col>Пн</ion-col>
+            <ion-col>Вт</ion-col>
+            <ion-col>Ср</ion-col>
+            <ion-col>Чт</ion-col>
+            <ion-col>Пт</ion-col>
+            <ion-col>Сб</ion-col>
+            <ion-col>Вс</ion-col>
+          </ion-row>
+          <ion-row class="calendar-date">
+            <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month">{{lastDay}}</ion-col>
+            <ion-col col-1 *ngFor="let day of daysInThisMonth">
+              <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+              <ng-template #otherDate class="otherDate"><span class="tm-day">{{day}}</span></ng-template>
+            </ion-col>
+            <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month">{{nextDay}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
 
+  </div>
+
+  <div class="tm-event">
+      <ion-list>
+          <ion-item (click)="goToPerson()">
+              <div class="tm-item-wrap">
+                <div class="tm-block date"><span>09.10.2017</span></div>
+                <div class="tm-block">
+                  <div class="i-block"><a href="#">Иван Иванов</a></div>
+                  <div class="i-block"><h2>5 лет со дня смерти</h2></div>
+                </div>
+              </div> 
+          </ion-item>
+          <ion-item (click)="goToFeast()">
+              <div class="tm-item-wrap">
+                <div class="tm-block date"><span>15.10.2017</span></div>
+                <div class="tm-block">
+                  <div class="i-block"><a href="#">Пасха</a></div>
+                  <div class="i-block"><h2>Христианство</h2></div>
+                </div>
+              </div> 
+          </ion-item>
+      </ion-list>
+  </div>
 </ion-content>

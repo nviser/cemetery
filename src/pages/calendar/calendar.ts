@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
+import { FeastPage } from '../feast/feast';
+import { PersonPage } from '../person/person';
 
 @IonicPage()
 @Component({
@@ -19,19 +21,31 @@ export class CalendarPage {
   currentDate: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    //this.monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     this.getDaysOfMonth();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarPage');
-    /* this.getDaysOfMonth(); */
   }
 
   goToSettings(){
     this.navCtrl.push(SettingsPage, {
       id: "set",
       name: "Set"
+    });
+  }
+
+  goToPerson(){
+    this.navCtrl.push(PersonPage, {
+      id: "list",
+      name: "List"
+    });
+  }
+  
+  goToFeast(){
+    this.navCtrl.push(FeastPage, {
+      id: "feast",
+      name: "Feast"
     });
   }
 

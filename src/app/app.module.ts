@@ -18,7 +18,7 @@ import { CalendarPage } from '../pages/calendar/calendar';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { CalendarModule } from 'ionic3-calendar';
+/* import { CalendarModule } from 'ionic3-calendar'; */
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { CalendarModule } from 'ionic3-calendar';
   ],
   imports: [
     BrowserModule,
-    CalendarModule,
+    /* CalendarModule, */
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

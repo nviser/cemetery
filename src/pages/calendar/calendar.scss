@@ -95,72 +95,154 @@ page-calendar {
                     }
                 }
             }
+            .tm-calendar {
+                [col-1] {
+                    -webkit-box-flex: 0;
+                    -webkit-flex: 0 0 8.33333%;
+                    -ms-flex: 0 0 8.33333%;
+                    flex: 0 0 14.285714285714286%;
+                    width: 14.285714285714286%;
+                    max-width: 14.285714285714286%;
+                  }
+                  .col {
+                    text-align: center;
+                    padding: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 40px;
+                        .tm-day {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 30px;
+                            width: 30px;
+                            height: 27px;
+                        }
+                        &:nth-child(9) {
+                            .tm-day {
+                                background: #3e4450;
+                                color: #ffffff;
+                            }
+                        }
+                        &:nth-child(15) {
+                            .tm-day {
+                                background: #838b99;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                  .last-month, .next-month {
+                    color: #999999;
+                    font-size: 90%;
+                    visibility: hidden;
+                  }
+                  .currentDate, .otherDate {
+                    padding: 5px;
+                  }
+                  .currentDate {
+                    border: 1px solid $bg-light-grey;
+                    border-radius: 30px;
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  }
+                  .calendar-header {
+                    background-color: #1a732d;
+                    color: #FFFFFF;
+                  }
+                  .event-bullet {
+                    margin: 2px auto;
+                    height: 5px;
+                    width: 5px;
+                    background-color: green;
+                    border-radius: 30px;
+                  }
+                  .selected-date {
+                    width: 20px;
+                    height: 2px;
+                    background-color: blue;
+                  }
+                  .unselected-date {
+                    border: none;
+                  }
+                  .calendar-body {
+                    .grid {
+                      padding: 0;
+                    }
+                    .col:last-child {
+                      border-right: none;
+                    }
+                    .calendar-weekday, .calendar-date {
+                      text-align: center;
+                      margin: 0;
+                    }
+                    .calendar-weekday {
+                        padding: 30px 15% 0 15%;
+                        color: #ffffff;
+                      background-color: $bg-light-grey;
+                    }
+                    .calendar-date {
+                        padding: 20px 15%;
+                        background: #ffffff;
+                        color: #333333;
+                    }
+                  }
+                
+            }
+            .tm-event {
+                /* height: 100px; */
+                background: $btn-reg;
+                .tm-item-wrap {
+                    display: flex;
+                    .tm-block {
+                        &.date {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                .list {
+                    margin-bottom: 0;
+                    background: $btn-reg;
+                    .item {
+                        background: none;
+                        border-bottom: 1px solid $bg-light-grey;
+                        min-height: 12rem;
+                        padding-left: calc(5% + 30px);
+                        padding-right: calc(5% + 30px);
+                        margin: 0 auto;
+                        ion-label {
+                            white-space: unset;
+                            color: #ffffff;
+                            h2 {
+                                font-weight: bold;
+                            }
+                            a {
+                                font-size: 18px;
+                                color: #ffffff;
+                            }
+                        }
+                        ion-thumbnail  {
+                            min-height: 40px;
+                            span {
+                                color: #ffffff;
+                            }
+                        }
+                        .item-inner {
+                            border-bottom: none;
+                        }
+                        &:first-child {
+                            border-top: none;
+                        }
+                        &:last-child {
+                            border-bottom: 1px solid $bg-light-grey;
+                        }
+                    }
+                }
+            }
         }
     }
 
-    [col-1] {
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 8.33333%;
-        -ms-flex: 0 0 8.33333%;
-        flex: 0 0 14.285714285714286%;
-        width: 14.285714285714286%;
-        max-width: 14.285714285714286%;
-      }
-      .col {
-        text-align: center;
-        padding: 5px;
-      }
-      .last-month, .next-month {
-        color: #999999;
-        font-size: 90%;
-      }
-      .currentDate, .otherDate {
-        padding: 5px;
-      }
-      .currentDate {
-        font-weight: bold;
-        background-color: red;
-        color: white;
-        border-radius: 30px;
-      }
-      .calendar-header {
-        background-color: #1a732d;
-        color: #FFFFFF;
-      }
-      .event-bullet {
-        margin: 2px auto;
-        height: 5px;
-        width: 5px;
-        background-color: green;
-        border-radius: 30px;
-      }
-      .selected-date {
-        width: 20px;
-        height: 2px;
-        background-color: blue;
-      }
-      .unselected-date {
-        border: none;
-      }
-      .calendar-body {
-        .grid {
-          padding: 0;
-        }
-        .col:last-child {
-          border-right: none;
-        }
-        .calendar-weekday, .calendar-date {
-          text-align: center;
-          margin: 0;
-        }
-        .calendar-weekday {
-          font-weight: bold;
-          border-bottom: solid 1px #1a732d;
-          background-color: #26ab56;
-        }
-        .calendar-date {
-          border-top: solid 1px #1a732d;
-          border-bottom: solid 1px #1a732d;
-        }
-      }
 }
