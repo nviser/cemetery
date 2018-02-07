@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ActionSheetController } from 'ionic-angular';
+import { ActionSheetController, App } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
 import { FeastPage } from '../feast/feast';
+import { AboutPage } from '../about/about';
 
 @Component({
   selector: 'page-holidays',
@@ -12,8 +13,12 @@ export class HolidaysPage {
 
 confession: string = 'Христианство';
 
-  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController) {
+  constructor(public navCtrl: NavController, private app: App, public actionSheetCtrl: ActionSheetController) {
 
+  }
+
+  goback() {
+    this.app.getRootNav().setRoot(AboutPage);
   }
 
   goToFeast(){

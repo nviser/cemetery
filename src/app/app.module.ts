@@ -38,7 +38,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     /* CalendarModule, */
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'Выйти',
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'wp-transition',
+      swipeBackEnabled: false
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

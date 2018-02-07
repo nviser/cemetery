@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, App } from 'ionic-angular';
 import { PersonPage } from '../person/person';
 import { SettingsPage } from '../settings/settings';
+import { AboutPage } from '../about/about';
 
 @IonicPage()
 @Component({
@@ -12,11 +13,15 @@ export class ListPage {
 
   kin: string = 'Степень родства';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private app: App, public actionSheetCtrl: ActionSheetController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
+  }
+
+  goback() {
+    this.app.getRootNav().setRoot(AboutPage);
   }
 
   goToSettings(){

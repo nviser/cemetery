@@ -8,6 +8,7 @@ import { HolidaysPage } from '../holidays/holidays';
 import { PersonPage } from '../person/person';
 import { ListPage } from '../list/list';
 import { CalendarPage } from '../calendar/calendar';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-about',
@@ -32,8 +33,8 @@ export class AboutPage {
   }
 
   goToList(){
-    this.navCtrl.push(ListPage, {
-      id: "list",
+    this.navCtrl.push(TabsPage, {
+      id: "0",
       name: "List"
     });
   }
@@ -46,15 +47,15 @@ export class AboutPage {
   }
 
   goToHolidays(){
-    this.navCtrl.push(HolidaysPage, {
-      id: "holly",
+    this.navCtrl.push(TabsPage, {
+      id: "2",
       name: "Holy"
     });
   }
 
   goToCalendar(){
-    this.navCtrl.push(CalendarPage, {
-      id: "calendar",
+    this.navCtrl.push(TabsPage, {
+      id: "1",
       name: "Calendar"
     });
   }

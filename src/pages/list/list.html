@@ -6,6 +6,11 @@
         <img class="tm-holidays" src="assets/imgs/list_top_54_54.png" alt="person">Список памяти
       </div>
     </ion-title>
+    <ion-buttons left>
+      <button class="tm-back-btn" ion-button icon-only (click)="goback()">
+          <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-buttons right>
         <button ion-button icon-only (click)="goToSettings()">
             <img class="tm-settings" src="assets/imgs/settings_48_48.png" alt="settings">

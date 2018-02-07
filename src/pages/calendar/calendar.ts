@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
 import { FeastPage } from '../feast/feast';
 import { PersonPage } from '../person/person';
+import { AboutPage } from '../about/about';
 
 @IonicPage()
 @Component({
@@ -20,12 +21,16 @@ export class CalendarPage {
   currentYear: any;
   currentDate: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, private app: App, public navParams: NavParams) {
     this.getDaysOfMonth();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarPage');
+  }
+
+  goback() {
+    this.app.getRootNav().setRoot(AboutPage);
   }
 
   goToSettings(){
