@@ -17,6 +17,10 @@ import { CalendarPage } from '../pages/calendar/calendar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
+import { HttpModule} from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 /* import { CalendarModule } from 'ionic3-calendar'; */
 
@@ -37,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    /* CalendarModule, */
+    HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: 'Выйти',
       iconMode: 'ios',
@@ -66,7 +71,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ApiServiceProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

@@ -33,7 +33,7 @@ export class AboutPage {
     this.slides.slidePrev();
   }
 
-  exit() {
+  goToHome() {
     this.app.getRootNav().setRoot(HomePage);
   }
 
