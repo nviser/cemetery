@@ -12,24 +12,38 @@ import * as App from '../../config/app';
 export class ApiServiceProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello ApiServiceProvider Provider');
 
   }
 
-  apiСonnect(form){
-    return new Promise((resolve,reject) => {
+  authorization(form) {
             const formData = new FormData();
             formData.append('auth_data[login]', form.login);
             formData.append('auth_data[password]', form.password);
+            return this.apiConnect(formData, App.API_LOGIN); 
+  }
 
-          this.http.post(App.API, formData)
+  registration(form) {
+            const formData = new FormData();
+            formData.append('auth_data[name]', form.name);
+            formData.append('auth_data[surname]', form.surname);
+            formData.append('auth_data[email]', form.email);
+            formData.append('auth_data[telephone]', form.telephone);
+            formData.append('auth_data[password]', form.password);
+            return this.apiConnect(formData, App.API_REG); 
+  }
+
+  apiConnect(formData, api) {
+    return new Promise((resolve,reject) => {
+
+          this.http.post(api, formData)
             .subscribe(data => {
               resolve(data);
             },
             error=>{
                 reject(error);
-            } );
+            });
         });
+
   }
 
 }

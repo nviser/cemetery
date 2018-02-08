@@ -54,51 +54,46 @@ export class HomePage {
         loading.present();
         this.sendData.login = this.authData.phone;
         this.sendData.password = this.authData.password;
-      // this.http.post('http://memorybook.secall.ru/index.php?route=client/auth/login', this.authData).map((response) => response.json()).subscribe(resp => {
-      //       //...
 
-      //   })
-        console.log(this.authData);
-        console.log(this.sendData);
-        console.log(typeof this.sendData.login);
-      this.apiServiceProvider.apiСonnect(this.sendData).then((data: any) => {
+      this.apiServiceProvider.authorization(this.sendData).then((data: any) => {
         console.log(data);
-        this.goToMainPage();
+        if(data.auth.client_id && data.auth.token){
+            this.goToMainPage();
+          } else {
+            this.presentAlert(data.auth.no_client);
+          }
         loading.dismiss();
       });
         
-
-      /* setTimeout(() => {
-        this.goToMainPage();
-        loading.dismiss();
-      }, 3000); */
     } else {
       this.presentAlert('Неправильные данные для входа');
     }
   }
 
   checkRegData() {
-    if(this.validateRegData(this.regData.name, this.regData.lastName, this.regData.phone, this.regData.password, this.regData.confPassword) 
+    if(this.validateRegData(this.regData.name, this.regData.surname, this.regData.telephone, this.regData.password, this.regData.confPassword) 
       && this.checkPassIdentity(this.regData.password, this.regData.confPassword)
     ){
       let loading = this.loadingCtrl.create({
             content: 'Регистрация. Подождите...'
         });
         loading.present();
-      setTimeout(() => {
-        this.goToMainPage();
-        loading.dismiss();
-      }, 3000);
+        this.regData.email = this.regData.telephone + '@test.ru'
+
+        this.apiServiceProvider.registration(this.regData).then((data: any) => {
+          console.log(data);
+          if(data.register && data.register.client_id && data.register.token){ 
+            this.goToMainPage();
+           } else {
+            this.presentAlert(data.error.email);
+          } 
+          loading.dismiss();
+        });
     }
   }
 
   validateRegData(name, lname, phone, pass, confpass) {
-    if(this.regData.name 
-      && this.regData.lastName 
-      && this.regData.phone 
-      && this.regData.password 
-      && this.regData.confPassword 
-    ) {
+    if(name && lname && phone && pass && confpass) {
       return true;
     } else {
       this.presentAlert('Неправильные данные для регистрации');
