@@ -60,6 +60,7 @@ export class HomePage {
       //   })
         console.log(this.authData);
         console.log(this.sendData);
+        console.log(typeof this.sendData.login);
       this.apiServiceProvider.apiСonnect(this.sendData).then((data: any) => {
         console.log(data);
         this.goToMainPage();

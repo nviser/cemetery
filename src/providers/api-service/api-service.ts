@@ -19,20 +19,16 @@ export class ApiServiceProvider {
   apiСonnect(form){
     return new Promise((resolve,reject) => {
             const formData = new FormData();
-            
-                formData.append('auth_data', form);
-                // formData.append('password', form.password);
-                // formData.append('login', form.login);
-            
-            // formData.append('data', JSON.stringify(this.form));
+            formData.append('auth_data[login]', form.login);
+            formData.append('auth_data[password]', form.password);
+
           this.http.post(App.API, formData)
-            /* .map(res => res.json()) */
             .subscribe(data => {
               resolve(data);
             },
             error=>{
-                reject({error:"error"});
-            });
+                reject(error);
+            } );
         });
   }
 
