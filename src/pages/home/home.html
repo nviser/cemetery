@@ -24,14 +24,14 @@
       
       <ion-list class="tm-wrap-input">
         <ion-item>
-          <ion-input type="tel" placeholder="+7 900 900 90 90" clearInput></ion-input>
+          <ion-input type="tel" placeholder="+7 900 900 90 90" [(ngModel)]="authData.phone" clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="password" placeholder="Пароль" clearInput></ion-input>
+          <ion-input type="password" placeholder="Пароль" [(ngModel)]="authData.password" clearInput></ion-input>
         </ion-item>
       </ion-list>
         <div class="tm-item">
-          <button class="tm-reg-btn" (click)="goToMainPage()">Войти</button>
+          <button class="tm-reg-btn" (click)="checkAuthData()">Войти</button>
         </div>
         <div class="tm-item">
           <a href="#">Напомнить пароль</a>
@@ -57,23 +57,23 @@
     <div class="tm-wrap" *ngSwitchCase="'registration'">
       <ion-list class="tm-wrap-input">
         <ion-item>
-          <ion-input placeholder="Имя" clearInput></ion-input>
+          <ion-input placeholder="Имя" [(ngModel)]="regData.name" clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Фамилия" clearInput></ion-input>
+          <ion-input placeholder="Фамилия" [(ngModel)]="regData.lastName"clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="E-mail/Телефон" clearInput></ion-input>
+          <ion-input placeholder="E-mail/Телефон" [(ngModel)]="regData.phone" clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="password" placeholder="Пароль" clearInput></ion-input>
+          <ion-input type="password" placeholder="Пароль" [(ngModel)]="regData.password" clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="password" placeholder="Подтвердите пароль" clearInput></ion-input>
+          <ion-input type="password" placeholder="Подтвердите пароль" [(ngModel)]="regData.confPassword" clearInput></ion-input>
         </ion-item>
       </ion-list>
       <div class="tm-item">
-        <button class="tm-reg-btn">Зарегистрироваться</button>
+        <button class="tm-reg-btn" (click)="checkRegData()">Зарегистрироваться</button>
       </div>
     </div>
   </div>
