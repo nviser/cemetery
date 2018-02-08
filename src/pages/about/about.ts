@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { MapPage } from '../map/map';
@@ -9,6 +9,7 @@ import { PersonPage } from '../person/person';
 import { ListPage } from '../list/list';
 import { CalendarPage } from '../calendar/calendar';
 import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-about',
@@ -20,7 +21,7 @@ export class AboutPage {
 
   map = MapPage;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private app: App,) {
 
   }
 
@@ -30,6 +31,10 @@ export class AboutPage {
 
   slidePrev() {
     this.slides.slidePrev();
+  }
+
+  exit() {
+    this.app.getRootNav().setRoot(HomePage);
   }
 
   goToList(){
