@@ -33,19 +33,6 @@ export class HomePage {
     alert.present();
   }
 
-  /* apiСonnect(){
-    return new Promise((resolve,reject) => {
-          this.http.post('http://memorybook.secall.ru/index.php?route=client/auth/login', this.authData)
-            .map(res => res.json())
-            .subscribe(data => {
-              resolve(data);
-            },
-            error=>{
-                reject({error:"error"});
-            });
-        });
-  } */
-
   checkAuthData() {
     if(this.authData.phone && this.authData.password && this.authData.phone.length > 0 && this.authData.password.length > 0){
       let loading = this.loadingCtrl.create({
@@ -56,7 +43,6 @@ export class HomePage {
         this.sendData.password = this.authData.password;
 
       this.apiServiceProvider.authorization(this.sendData).then((data: any) => {
-        console.log(data);
         if(data.auth.client_id && data.auth.token){
             this.goToMainPage();
           } else {
@@ -81,12 +67,13 @@ export class HomePage {
         this.regData.email = this.regData.telephone + '@test.ru'
 
         this.apiServiceProvider.registration(this.regData).then((data: any) => {
-          console.log(data);
+
           if(data.register && data.register.client_id && data.register.token){ 
             this.goToMainPage();
-           } else {
+          } else {
             this.presentAlert(data.error.email);
           } 
+
           loading.dismiss();
         });
     }

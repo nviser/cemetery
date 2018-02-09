@@ -54,4 +54,8 @@ export class SettingsPage {
     actionSheet.present();
   }
 
+  saveData() {
+    console.log('Save data is clicked');
+  }
+
 }

@@ -24,6 +24,10 @@ export class PersonPage {
     console.log('ionViewDidLoad PersonPage');
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
   goToSettings(){
     this.navCtrl.push(SettingsPage, {
       id: "set",

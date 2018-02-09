@@ -8,8 +8,12 @@ page-map {
         .toolbar-title {
             color: #ffffff;
         }
+        .tm-back-btn {
+            color: #ffffff;
+        }
         .back-button {
             color: #ffffff;
+            display: none !important;
             .back-button-text {
                 display: none;
             }

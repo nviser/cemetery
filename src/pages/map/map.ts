@@ -20,6 +20,10 @@ export class MapPage {
     console.log('ionViewDidLoad MapPage');
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
   goToSettings(){
     this.navCtrl.push(SettingsPage, {
       id: "set",
