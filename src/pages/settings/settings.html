@@ -1,50 +1,50 @@
 <ion-header>
-    <ion-navbar hideBackButton>
-      <ion-title>
-        <div class="tm-title-wrap">
-          <img class="tm-settings" src="assets/imgs/settings_54_54.png" alt="settings">Настройки
-        </div>
-      </ion-title>
-      <ion-buttons left>
-          <button class="tm-back-btn" ion-button icon-only (click)="goBack()">
-              <ion-icon name="arrow-back"></ion-icon>
-          </button>
-      </ion-buttons>
-    </ion-navbar>
-  </ion-header> 
+  <ion-navbar hideBackButton>
+    <ion-title>
+      <div class="tm-title-wrap">
+        <img class="tm-settings" src="assets/imgs/settings_54_54.png" alt="settings">Настройки
+      </div>
+    </ion-title>
+    <ion-buttons left>
+        <button class="tm-back-btn" ion-button icon-only (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> 
 
 <ion-content>
   <ion-list>
     <ion-item>
-        <ion-input type="text" placeholder="Имя"></ion-input>
+        <ion-input type="text" placeholder="Имя" [(ngModel)]="userData.name"></ion-input>
         <ion-label color="primary" stacked>Имя</ion-label>
         <ion-icon item-end>
           <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
         </ion-icon>
     </ion-item>
     <ion-item>
-        <ion-input type="text" placeholder="Фамилия"></ion-input>
+        <ion-input type="text" placeholder="Фамилия" [(ngModel)]="userData.surname"></ion-input>
         <ion-label color="primary" stacked>Фамилия</ion-label>
         <ion-icon item-end>
           <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
         </ion-icon>
     </ion-item>
     <ion-item>
-        <ion-input type="tel" placeholder="Телефон"></ion-input>
+        <ion-input type="tel" placeholder="Телефон" [(ngModel)]="userData.telephone"></ion-input>
         <ion-label color="primary" stacked>Телефон</ion-label>
         <ion-icon item-end>
           <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
         </ion-icon>
     </ion-item>
     <ion-item>
-        <ion-input type="email" placeholder="Email"></ion-input>
+        <ion-input type="email" placeholder="Email" [(ngModel)]="userData.email"></ion-input>
         <ion-label color="primary" stacked>Email</ion-label>
         <ion-icon item-end>
           <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">
         </ion-icon>
     </ion-item>
     <ion-item>
-        <ion-input type="password" placeholder="Пароль"></ion-input>
+        <ion-input type="password" placeholder="Пароль" [(ngModel)]="userData.password"></ion-input>
         <ion-label color="primary" stacked>Пароль</ion-label>
         <ion-icon item-end>
           <img class="tm-edit" src="assets/imgs/edit_54_54.png" alt="edit">

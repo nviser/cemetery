@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ActionSheetController } from 'ionic-angular'
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { ActionSheetController } from 'ionic-angular';
+import { ApiServiceProvider } from '../../providers/api-service/api-service';
 
 @IonicPage()
 @Component({
@@ -10,9 +11,35 @@ import { ActionSheetController } from 'ionic-angular'
 export class SettingsPage {
 
   melody: string = 'Выбрать мелодию';
+  userData: any = {};
 
-  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController) {
+  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, 
+              public apiServiceProvider: ApiServiceProvider, public loadingCtrl: LoadingController) {
 
+  }
+
+  ionViewWillEnter() {
+    this.getUserData();
+  }
+
+  getUserData() {
+    let loading = this.loadingCtrl.create({
+        content: 'Авторизация. Подождите...'
+    });
+    loading.present();
+
+    const client_id = localStorage.getItem('mb_client_id');
+
+    this.apiServiceProvider.get_user_data(client_id).then((data: any) => {
+    
+        this.userData.name = data.client_name;
+        this.userData.surname = data.client_surname;
+        this.userData.telephone = data.client_telephone;
+        this.userData.email = data.client_email;
+        this.userData.password = data.client_password;
+        
+        loading.dismiss();
+      });
   }
 
   goBack(){

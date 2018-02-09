@@ -12,7 +12,7 @@ import { ApiServiceProvider } from '../../providers/api-service/api-service';
 })
 export class HomePage {
   
-  enterType: any;
+  enterType: string;
   authData: any = {};
   regData: any = {};
   sendData: any = {};
@@ -45,6 +45,7 @@ export class HomePage {
       this.apiServiceProvider.authorization(this.sendData).then((data: any) => {
         if(data.auth.client_id && data.auth.token){
             this.goToMainPage();
+            localStorage.setItem('mb_client_id', data.auth.client_id);
           } else {
             this.presentAlert(data.auth.no_client);
           }
@@ -70,6 +71,7 @@ export class HomePage {
 
           if(data.register && data.register.client_id && data.register.token){ 
             this.goToMainPage();
+            localStorage.setItem('mb_client_id', data.register.client_id);
           } else {
             this.presentAlert(data.error.email);
           } 
