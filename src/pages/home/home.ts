@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, ToastController } from 'ionic-angular';
 
 import { AboutPage } from '../about/about';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
@@ -17,20 +17,30 @@ export class HomePage {
   regData: any = {};
   sendData: any = {};
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, 
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public toastCtrl: ToastController,
     public loadingCtrl: LoadingController, public apiServiceProvider: ApiServiceProvider ) {
 
     this.enterType = 'login';
 
   }
 
-  presentAlert(text) {
+  /* presentAlert(text) {
     let alert = this.alertCtrl.create({
       title: 'Ошибка',
       subTitle: text,
       buttons: ['OK']
     });
     alert.present();
+  } */
+
+  toastShow(msg) {
+      let toast = this.toastCtrl.create({
+          message: msg,
+          duration: 3000,
+          position: 'top'
+      });
+
+      toast.present();
   }
 
   checkAuthData() {
@@ -47,13 +57,15 @@ export class HomePage {
             this.goToMainPage();
             localStorage.setItem('mb_client_id', data.auth.client_id);
           } else {
-            this.presentAlert(data.auth.no_client);
+            //this.presentAlert(data.auth.no_client);
+            this.toastShow(data.auth.no_client);
           }
         loading.dismiss();
       });
         
     } else {
-      this.presentAlert('Неправильные данные для входа');
+      //this.presentAlert('Неправильные данные для входа');
+      this.toastShow('Неправильные данные для входа');
     }
   }
 
@@ -73,7 +85,8 @@ export class HomePage {
             this.goToMainPage();
             localStorage.setItem('mb_client_id', data.register.client_id);
           } else {
-            this.presentAlert(data.error.email);
+            //this.presentAlert(data.error.email);
+            this.toastShow(data.error.email);
           } 
 
           loading.dismiss();
@@ -85,7 +98,8 @@ export class HomePage {
     if(name && lname && phone && pass && confpass) {
       return true;
     } else {
-      this.presentAlert('Неправильные данные для регистрации');
+      //this.presentAlert('Неправильные данные для регистрации');
+      this.toastShow('Неправильные данные для регистрации');
       return false;
     }
   }
@@ -94,7 +108,8 @@ export class HomePage {
     if(pass === confpass){
       return true;
     } else {
-      this.presentAlert('Пароли не совпадают');
+      //this.presentAlert('Пароли не совпадают');
+      this.toastShow('Пароли не совпадают');
       return false;
     }
   }

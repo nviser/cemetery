@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, ToastController } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
 
@@ -13,13 +13,23 @@ export class SettingsPage {
   melody: string = 'Выбрать мелодию';
   userData: any = {};
 
-  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, 
+  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController,
               public apiServiceProvider: ApiServiceProvider, public loadingCtrl: LoadingController) {
 
   }
 
   ionViewWillEnter() {
     this.getUserData();
+  }
+
+  toastShow(msg) {
+      let toast = this.toastCtrl.create({
+          message: msg,
+          duration: 3000,
+          position: 'top'
+      });
+
+      toast.present();
   }
 
   getUserData() {
@@ -44,14 +54,18 @@ export class SettingsPage {
   }
 
   setUserData() {
-    let loading = this.loadingCtrl.create({
-        content: 'Сохранение данных пользователя...'
-    });
-    loading.present();
-
-    this.apiServiceProvider.set_user_data(this.userData).then((data: any) => {
-      loading.dismiss();
-    });
+    if(this.userData.client_id && this.userData.name && this.userData.surname && this.userData.telephone && this.userData.email && this.userData.password) {
+      let loading = this.loadingCtrl.create({
+          content: 'Сохранение данных пользователя...'
+      });
+      loading.present();
+      this.apiServiceProvider.set_user_data(this.userData).then((data: any) => {
+        loading.dismiss();
+        this.toastShow('Данные пользователя сохранены');
+      });
+    } else {
+        this.toastShow('Пустые поля не допустимы');
+    }
   }
 
   goBack(){
