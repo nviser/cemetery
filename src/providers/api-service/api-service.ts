@@ -24,6 +24,11 @@ export class ApiServiceProvider {
     return this.apiConnect(client_id, App.API + App.API_GET_CLIENT);
   }
 
+  set_user_data(form) {
+    const sendForm = {auth_data: form};
+    return this.apiConnect(sendForm, App.API + App.API_EDIT_CLIENT);
+  }
+
   apiConnect(formData, api) {
     return new Promise((resolve,reject) => {
 

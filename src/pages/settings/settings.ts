@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
 
@@ -24,7 +24,7 @@ export class SettingsPage {
 
   getUserData() {
     let loading = this.loadingCtrl.create({
-        content: 'Авторизация. Подождите...'
+        content: 'Загрузка данных пользователя...'
     });
     loading.present();
 
@@ -32,14 +32,26 @@ export class SettingsPage {
 
     this.apiServiceProvider.get_user_data(client_id).then((data: any) => {
     
+        this.userData.client_id = data.client_id;
         this.userData.name = data.client_name;
         this.userData.surname = data.client_surname;
         this.userData.telephone = data.client_telephone;
         this.userData.email = data.client_email;
         this.userData.password = data.client_password;
-        
+
         loading.dismiss();
       });
+  }
+
+  setUserData() {
+    let loading = this.loadingCtrl.create({
+        content: 'Сохранение данных пользователя...'
+    });
+    loading.present();
+
+    this.apiServiceProvider.set_user_data(this.userData).then((data: any) => {
+      loading.dismiss();
+    });
   }
 
   goBack(){
@@ -82,7 +94,7 @@ export class SettingsPage {
   }
 
   saveData() {
-    console.log('Save data is clicked');
+    this.setUserData();
   }
 
 }
