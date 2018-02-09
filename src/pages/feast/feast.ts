@@ -17,6 +17,10 @@ export class FeastPage {
     console.log('ionViewDidLoad FeastPage');
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
   goToSettings(){
     this.navCtrl.push(SettingsPage, {
       id: "set",
