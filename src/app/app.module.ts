@@ -21,6 +21,8 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { HttpModule} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
+import {Ionic2MaskDirective} from "ionic2-mask-directive";
+
 
 /* import { CalendarModule } from 'ionic3-calendar'; */
 
@@ -37,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     PersonPage,
     FeastPage,
     ListPage,
-    CalendarPage
+    CalendarPage,
+    Ionic2MaskDirective
   ],
   imports: [
     BrowserModule,

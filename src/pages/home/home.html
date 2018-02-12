@@ -57,16 +57,16 @@
     <div class="tm-wrap" *ngSwitchCase="'registration'">
       <ion-list class="tm-wrap-input">
         <ion-item>
-          <ion-input placeholder="Имя" [(ngModel)]="regData.name" clearInput></ion-input>
+          <ion-input type="text" placeholder="Имя" [(ngModel)]="regData.name" clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Фамилия" [(ngModel)]="regData.surname"clearInput></ion-input>
+          <ion-input type="text" placeholder="Фамилия" [(ngModel)]="regData.surname"clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Телефон" [(ngModel)]="regData.telephone" clearInput></ion-input>
+          <ion-input type="tel" mask="+9 999 999 99 99" placeholder="Телефон" [(ngModel)]="regData.telephone" clearInput></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="E-mail" [(ngModel)]="regData.email" clearInput></ion-input>
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="regData.email" clearInput></ion-input>
         </ion-item>
         <ion-item>
           <ion-input type="password" placeholder="Пароль" [(ngModel)]="regData.password" clearInput></ion-input>
