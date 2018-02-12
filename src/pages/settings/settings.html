@@ -56,30 +56,36 @@
     <div class="tm-check-wrap">
       <div class="tm-inner left">
               <ul>
-                <li>
-                  <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                <li (click)="switchDay('0')">
+                  <img *ngIf="eventDay != 0" class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                  <img *ngIf="eventDay == 0" class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
                 В день события</li>
-                <li>
-                    <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                <li (click)="switchDay('1')">
+                    <img *ngIf="eventDay != 1" class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                    <img *ngIf="eventDay == 1" class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
                   За 1 день до даты
                 </li>
-                <li>
-                    <img class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
+                <li (click)="switchDay('2')">
+                    <img *ngIf="eventDay != 2" class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                    <img *ngIf="eventDay == 2" class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
                   За 2 дня до даты
                 </li>
               </ul>
       </div>
       <div class="tm-inner right">
           <ul>
-              <li>
-                <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+              <li (click)="switchNtf('push')">
+                <img *ngIf="eventNtf != 'push'" class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                <img *ngIf="eventNtf == 'push'" class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
                 PUSH</li>
-              <li>
-                  <img class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+              <li (click)="switchNtf('sms')">
+                  <img *ngIf="eventNtf != 'sms'" class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                  <img *ngIf="eventNtf == 'sms'"class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
                   SMS
               </li>
-              <li>
-                  <img class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">
+              <li (click)="switchNtf('email')">
+                  <img *ngIf="eventNtf != 'email'" class="tm-checkbox" src="assets/imgs/off_30_30.png" alt="edit">
+                  <img *ngIf="eventNtf == 'email'" class="tm-checkbox" src="assets/imgs/on_30_30.png" alt="edit">                  
                   Email
               </li>
             </ul>

@@ -12,6 +12,8 @@ export class SettingsPage {
 
   melody: string = 'Выбрать мелодию';
   userData: any = {};
+  eventDay: string = '0';
+  eventNtf: string = 'push';
 
   constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController,
               public apiServiceProvider: ApiServiceProvider, public loadingCtrl: LoadingController) {
@@ -54,7 +56,18 @@ export class SettingsPage {
   }
 
   setUserData() {
-    if(this.userData.client_id && this.userData.name && this.userData.surname && this.userData.telephone && this.userData.email && this.userData.password) {
+    this.userData.client_id = Number(localStorage.getItem('mb_client_id'));
+    this.userData.client_notification_date = this.eventDay;
+    this.userData.client_notification_type = this.eventNtf;
+    this.userData.client_melody = this.melody;
+    //console.log(this.userData.client_notification_date, this.userData.client_notification_type, this.userData.client_melody, this.userData.telephone, this.userData.email, this.userData.password);
+    if(this.userData.client_id 
+        && this.userData.name 
+        && this.userData.surname 
+        && this.userData.telephone 
+        && this.userData.email 
+        && this.userData.password
+      ) {
       let loading = this.loadingCtrl.create({
           content: 'Сохранение данных пользователя...'
       });
@@ -66,6 +79,14 @@ export class SettingsPage {
     } else {
         this.toastShow('Пустые поля не допустимы');
     }
+  }
+
+  switchDay(arg) {
+    this.eventDay = arg;
+  }
+
+  switchNtf(arg) {
+    this.eventNtf = arg;
   }
 
   goBack(){
