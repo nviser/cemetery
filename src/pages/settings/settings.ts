@@ -14,6 +14,7 @@ export class SettingsPage {
   userData: any = {};
   eventDay: string = '0';
   eventNtf: string = 'push';
+  
 
   constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController,
               public apiServiceProvider: ApiServiceProvider, public loadingCtrl: LoadingController) {
@@ -55,18 +56,20 @@ export class SettingsPage {
       });
   }
 
+  checkMail(value) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+  }
+
   setUserData() {
     this.userData.client_id = Number(localStorage.getItem('mb_client_id'));
     this.userData.client_notification_date = this.eventDay;
     this.userData.client_notification_type = this.eventNtf;
     this.userData.client_melody = this.melody;
+    this.userData.password = this.userData.password || null;
     //console.log(this.userData.client_notification_date, this.userData.client_notification_type, this.userData.client_melody, this.userData.telephone, this.userData.email, this.userData.password);
     if(this.userData.client_id 
-        && this.userData.name 
-        && this.userData.surname 
-        && this.userData.telephone 
-        && this.userData.email 
-        && this.userData.password
+        && this.validateRegData(this.userData.name, this.userData.surname, this.userData.telephone, this.userData.email, this.userData.password, this.userData.confPassword)
+        && this.checkPassIdentity(this.userData.password, this.userData.confPassword)
       ) {
       let loading = this.loadingCtrl.create({
           content: 'Сохранение данных пользователя...'
@@ -76,8 +79,44 @@ export class SettingsPage {
         loading.dismiss();
         this.toastShow('Данные пользователя сохранены');
       });
-    } else {
+    } /* else {
         this.toastShow('Пустые поля не допустимы');
+    } */
+  }
+
+  validateRegData(name, lname, phone, email, pass, confpass) {
+    if(name == undefined || name == ''){
+      this.toastShow('Введите имя');
+      return false;
+    } else if (lname == undefined || lname == '') {
+      this.toastShow('Введите фамилию');
+      return false;
+    } else if (phone == undefined || phone == '') {
+      this.toastShow('Введите телефон');
+      return false;
+    } else if (email == undefined || email == '') {
+      this.toastShow('Введите Email');
+      return false;
+    } else if (!this.checkMail(email)) {
+      this.toastShow('Не валидный Email');
+      return false;
+    } else if (pass == undefined || pass == '') {
+      this.toastShow('Введите пароль');
+      return false;
+    } else if (confpass == undefined || confpass == '') {
+      this.toastShow('Подтвердите пароль');
+      return false;
+    }
+    return true;
+  }
+
+  checkPassIdentity(pass, confpass) {
+    if(pass === confpass){
+      return true;
+    } else {
+      //this.presentAlert('Пароли не совпадают');
+      this.toastShow('Пароли не совпадают');
+      return false;
     }
   }
 

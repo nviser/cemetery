@@ -70,14 +70,14 @@ export class HomePage {
   }
 
   checkRegData() {
-    if(this.validateRegData(this.regData.name, this.regData.surname, this.regData.telephone, this.regData.password, this.regData.confPassword) 
+    if(this.validateRegData(this.regData.name, this.regData.surname, this.regData.telephone, this.regData.email, this.regData.password, this.regData.confPassword) 
       && this.checkPassIdentity(this.regData.password, this.regData.confPassword)
     ){
       let loading = this.loadingCtrl.create({
             content: 'Регистрация. Подождите...'
         });
         loading.present();
-        this.regData.email = this.regData.telephone + '@test.ru'
+        // this.regData.email = this.regData.telephone + '@test.ru'
 
         this.apiServiceProvider.registration(this.regData).then((data: any) => {
 
@@ -94,14 +94,34 @@ export class HomePage {
     }
   }
 
-  validateRegData(name, lname, phone, pass, confpass) {
-    if(name && lname && phone && pass && confpass) {
-      return true;
-    } else {
-      //this.presentAlert('Неправильные данные для регистрации');
-      this.toastShow('Неправильные данные для регистрации');
+  validateRegData(name, lname, phone, email, pass, confpass) {
+    if(name == undefined || name == ''){
+      this.toastShow('Введите имя');
+      return false;
+    } else if (lname == undefined || lname == '') {
+      this.toastShow('Введите фамилию');
+      return false;
+    } else if (phone == undefined || phone == '') {
+      this.toastShow('Введите телефон');
+      return false;
+    } else if (email == undefined || email == '') {
+      this.toastShow('Введите Email');
+      return false;
+    } else if (!this.checkMail(email)) {
+      this.toastShow('Не валидный Email');
+      return false;
+    } else if (pass == undefined || pass == '') {
+      this.toastShow('Введите пароль');
+      return false;
+    } else if (confpass == undefined || confpass == '') {
+      this.toastShow('Подтвердите пароль');
       return false;
     }
+    return true;
+  }
+
+  checkMail(value) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
   }
 
   checkPassIdentity(pass, confpass) {
